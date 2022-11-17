@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
+  has_many :products
   validates :apple, presence: true
   validates :samsung, presence: true
   validates :nokia, presence: true

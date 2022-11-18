@@ -1,0 +1,8 @@
+<div>
+<%@show.each do |m|%>
+  <h1><a href="<%= mobile_phone_path(m.id) %>"><%= m.name %></a></h1>
+  <img src="<%= m.image %>" alt="<%= m.name %>">
+  <p>$<%= m.price%></p>
+  <p><%= m.description %></p>
+  <%end%>
+</div>

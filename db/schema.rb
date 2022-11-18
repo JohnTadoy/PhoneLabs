@@ -10,14 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_17_175329) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_18_000815) do
   create_table "categories", force: :cascade do |t|
-    t.string "apple"
-    t.string "samsung"
-    t.string "nokia"
-    t.string "redmi"
-    t.string "realmi"
-    t.string "oppo"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,10 +38,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_17_175329) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
+    t.integer "categories_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
     t.string "description"
+    t.string "image"
+    t.index ["categories_id"], name: "index_products_on_categories_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,4 +54,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_17_175329) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "products", "categories", column: "categories_id"
 end

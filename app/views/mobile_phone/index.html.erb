@@ -1,0 +1,8 @@
+<div>
+  <h1>Products</h1>
+  <% @phone.each do |m| %>
+  <img src="<%= m.image%>" alt="<%= m.name%>">
+  <a href="<%= phone_type_path(m.id)%>"> <%= m.name %> </a>
+  <p><%= m.price%></p>
+</div>
+<%end%>

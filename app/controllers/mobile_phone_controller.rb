@@ -1,5 +1,5 @@
 class MobilePhoneController < ApplicationController
   def index
-    @phone = Product.page params[:page]
+    @phone =Product.all
   end
 end

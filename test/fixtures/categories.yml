@@ -1,17 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  apple: MyString
-  samsung: MyString
-  nokia: MyString
-  redmi: MyString
-  realmi: MyString
-  oppo: MyString
+  name: MyString
 
 two:
-  apple: MyString
-  samsung: MyString
-  nokia: MyString
-  redmi: MyString
-  realmi: MyString
-  oppo: MyString
+  name: MyString

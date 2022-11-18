@@ -1,6 +1,6 @@
 class MobilePhoneController < ApplicationController
   def index
-    @phone =Product.all
+    @phone =Product.page(params[:page])
   end
 
   def show

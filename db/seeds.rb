@@ -12,10 +12,10 @@ phones.each do | m |
   mobile_phone_input = Category.find_or_create_by(name: m["category"])
 
 if mobile_phone_input && mobile_phone_input.valid?
-  phone = mobile_phone_input.products.create(
+  phone = mobile_phone_input.products.find_or_create_by(
     name: m["name"],
     price: m["price"],
-    description: Faker::Lorem.sentences(number: 2),
+    description: Faker::Lorem.sentences(number: 35),
     image: Faker::LoremFlickr.image
   )
 puts "Invalid product #{m['name']}" unless mobile_phone_input.valid?

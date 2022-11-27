@@ -7,30 +7,46 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <%= javascript_importmap_tags %>
   </head>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/categories">Phone Brands</a></li>
-    </ul>
-    <form action="/mobile_phone/search">
-      <select name="type">
-        <option value="">Select Phone</option>
-        <option value="74">Apple</option>
-        <option value="78">Samsung</option>
-        <option value="75">Redmi</option>
-        <option value="76">Oppo</option>
-        <option value="77">Realme</option>
-        <option value="79">Nokia</option>
-        <option value="80">Tecno</option>
-        <option value="81">Oneplus</option>
-      </select>
-      <input type="search" name="q">
-      <button type="submit">Search</button>
-    </form>
-  </nav>
   <body>
+  <li><a href="/categories">Phone Brands</a></li>
+  <nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">PhoneLabs</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about/index">About</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search" action="/mobile_phone/search">
+       <select class="form-control me-2" name="type" >
+          <option value="">Select Phone</option>
+          <option value="91">Apple</option>
+          <option value="95">Samsung</option>
+          <option value="92">Redmi</option>
+          <option value="93">Oppo</option>
+          <option value="94">Realme</option>
+          <option value="96">Nokia</option>
+          <option value="97">Tecno</option>
+          <option value="98">Oneplus</option>
+        </select>
+        <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search" >
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
     <%= yield %>
   </body>
 </html>

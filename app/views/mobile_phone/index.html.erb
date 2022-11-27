@@ -1,9 +1,13 @@
 <div>
-  <h1>Products</h1>
-  <% @phone.each do |m| %>
-  <img src="<%= m.image%>" alt="<%= m.name%>">
-  <a href="<%= mobile_phone_path(m.id) %>"><%= m.name %></a>
-  <p>$<%= m.price%></p>
-</div>
+  <div>
+    <h1 class="text-center">All Mobile Phones</h1>
+    <% @phone.each do |m| %>
+    <div>
+      <img src="<%= m.image%>" alt="<%= m.name%>">
+      <a href="<%= mobile_phone_path(m.id) %>"><%= m.name %></a>
+      <p>Price $<%= m.price%></p>
+  </div>
 <%end%>
+</div>
 <%= paginate @phone %>
+</div>

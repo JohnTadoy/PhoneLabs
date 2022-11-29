@@ -13,7 +13,6 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-  <li><a href="/categories">Phone Brands</a></li>
   <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand">PhoneLabs</a>
@@ -27,6 +26,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="about/index">About</a>
+        </li>
+        <li>
+          <a class="nav-link" href="/categories">Phone Brands</a>
         </li>
       </ul>
       <form class="d-flex" role="search" action="/mobile_phone/search">
@@ -47,6 +49,20 @@
     </div>
   </div>
 </nav>
-    <%= yield %>
+ <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <%@breadcrumbs.each do |breadcrumb|%>
+      <%if breadcrumb[:path].nil?%>
+        <li class="breadcrumb-item" aria-current="page"></li>
+          <%= breadcrumb[:lable]%>
+        <%else%>
+        <li class="breadcrumb-item">
+          <%= link_to breadcrumb[:label], breadcrumb[:path]%>
+      <%end%>
+    <%end%>
+  </ol>
+</nav>
+  <%= yield %>
   </body>
 </html>

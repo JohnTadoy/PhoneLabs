@@ -16,7 +16,7 @@ if mobile_phone_input && mobile_phone_input.valid?
     name: m["name"],
     price: m["price"],
     description: Faker::Lorem.sentences(number: 35),
-    image: Faker::LoremFlickr.image
+    image: Faker::LoremFlickr.image(size: "250x250")
   )
 puts "Invalid product #{m['name']}" unless mobile_phone_input.valid?
 

@@ -1,12 +1,12 @@
 class MobilePhoneController < ApplicationController
   def index
     @phone = Product.page(params[:page])
-    add_breadcrumb('Phones')
+    add_breadcrumb('All Mobile Phones')
   end
 
   def show
     @show = Product.find(params[:id])
-    add_breadcrumb(@show.name, mobile_phone_path)
+    add_breadcrumb('All Mobile Phones', root_path)
     add_breadcrumb(@show.name)
   end
 

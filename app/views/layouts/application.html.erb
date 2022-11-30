@@ -55,7 +55,7 @@
     <%@breadcrumbs.each do |breadcrumb|%>
       <%if breadcrumb[:path].nil?%>
         <li class="breadcrumb-item" aria-current="page"></li>
-          <%= breadcrumb[:lable]%>
+          <%= breadcrumb[:label]%>
         <%else%>
         <li class="breadcrumb-item">
           <%= link_to breadcrumb[:label], breadcrumb[:path]%>

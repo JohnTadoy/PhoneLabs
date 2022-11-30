@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
 
   def show
     @show = Product.where("category_id = ? ", params[:id])
-    add_breadcrumb(@show.name, category_path)
+    add_breadcrumb('Phone Brands', categories_path)
     add_breadcrumb(@show.name)
   end
 end

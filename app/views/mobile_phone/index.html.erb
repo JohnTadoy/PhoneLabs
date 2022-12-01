@@ -6,6 +6,10 @@
       <img src="<%= m.image%>" alt="<%= m.name%>">
       <a href="<%= mobile_phone_path(m.id) %>"><%= m.name %></a>
       <p>Price $<%= m.price%></p>
+       <%= form_with url: cart_index_path, method: :post do %>
+      <% hidden_field_tag(:id, m.id)%>
+      <%=button_tag 'Add to Cart'%>
+      <%end%>
   </div>
 <%end%>
 </div>

@@ -3,4 +3,8 @@
   <img src="<%= @show.image %>" alt="<%= @show.name %>">
   <p>$<%= @show.price%></p>
   <p><%= @show.description %></p>
+  <%= form_with url: cart_index_path, method: :post do %>
+  <% hidden_field_tag(:id, @show.id)%>
+  <%=button_tag 'Add to Cart'%>
+  <%end%>
 </div>

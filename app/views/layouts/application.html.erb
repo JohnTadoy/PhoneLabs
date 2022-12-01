@@ -75,6 +75,20 @@
     <%end%>
   </ol>
 </nav>
+<header>
+  <p>
+    Contents of the shopping cart: <%= pluralize cart, 'time'%>
+  </p>
+  <p>
+    <%= debug cart%>
+  </p>
+<%if flash[:notice]%>
+  <p><%= flash [:notice]%></p>
+
+
+<%end%>
+</header>
+
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>

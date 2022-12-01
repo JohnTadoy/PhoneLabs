@@ -2,6 +2,9 @@ class MobilePhoneController < ApplicationController
   def index
     @phone = Product.page(params[:page])
     add_breadcrumb('All Mobile Phones')
+    session[:visit_count] ||= 0
+    session[:visit_count] += 1
+    @visit_count = session[:visit_count]
   end
 
   def show

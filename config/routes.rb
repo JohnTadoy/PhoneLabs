@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   devise_for :users
   root 'mobile_phone#index'
   resources :mobile_phone, only: %i[index show] do
@@ -6,6 +7,5 @@ Rails.application.routes.draw do
       get "search"
     end
   end
-
   resources :categories
 end

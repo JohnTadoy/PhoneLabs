@@ -2,6 +2,7 @@ require "csv"
 require "faker"
 Product.destroy_all
 Category.destroy_all
+AdminUser.destroy_all
 
 csv_file = Rails.root.join('db/MobilePhones.csv')
 csv_data = File.read(csv_file)
@@ -18,8 +19,7 @@ if mobile_phone_input && mobile_phone_input.valid?
     description: Faker::Lorem.sentences(number: 35),
     image: Faker::LoremFlickr.image(size: "250x250")
   )
-puts "Invalid product #{m['name']}" unless mobile_phone_input.valid?
-
+  puts "Invalid product #{m['name']}" unless mobile_phone_input.valid?
 end
   puts m['name']
 end

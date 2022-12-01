@@ -9,6 +9,7 @@ gem "faker"
 gem "kaminari"
 gem "activeadmin"
 gem "devise"
+gem 'webpacker', '~> 5.4', '>= 5.4.3'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

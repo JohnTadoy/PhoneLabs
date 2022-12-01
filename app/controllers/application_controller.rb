@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def cart
-    Product.find(session[:shopping_cart]);
+    # Product.find(session[:shopping_cart]);
   end
 
   before_action :set_breadcrumbs

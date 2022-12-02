@@ -5,7 +5,7 @@ class CartController < ApplicationController
     unless session[:shopping_cart].include?(id)
       session[:shopping_cart] << id
       product = Product.find(id)
-      flash[:notice] = " ➕ #{product.name} added to cart."
+      flash[:notice] = " ✔ #{product.name} added to cart."
     end
     redirect_to root_path
   end

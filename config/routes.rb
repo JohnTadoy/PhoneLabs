@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     end
   end
   resources :categories
-  resources :cart, only: [:create, :destroy]
+  resources :cart, only:[:create, :destroy]
 end

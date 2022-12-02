@@ -1,17 +1,17 @@
-<div>
-  <div>
+
     <h1 class="text-center">All Mobile Phones</h1>
-    <% @phone.each do |m| %>
-    <div>
-      <img src="<%= m.image%>" alt="<%= m.name%>">
-      <a href="<%= mobile_phone_path(m.id) %>"><%= m.name %></a>
-      <p>Price $<%= m.price%></p>
-       <%= form_with url: cart_index_path, method: :post do %>
-      <% hidden_field_tag(:id, m.id)%>
-      <%=button_tag 'Add to Cart'%>
+    <div class="container grid">
+      <% @phone.each do |m| %>
+      <div class="g-col-3 card shadow p-3 mb-5 bg-body rounded">
+        <img src="<%= m.image%>" alt="<%= m.name%>" class ="img-fluid border">
+        <a href="<%= mobile_phone_path(m.id) %>"><%= m.name %></a>
+        <p>Price $<%= m.price%></p>
+
+        <%=form_with url: cart_index_path, methd: :post do%>
+          <%= hidden_field_tag(:id, m.id)%>
+          <%=button_tag 'Add to Cart'%>
+        <%end%>
+      </div>
       <%end%>
-  </div>
-<%end%>
-</div>
+    </div>
 <%= paginate @phone %>
-</div>

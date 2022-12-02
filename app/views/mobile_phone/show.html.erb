@@ -4,8 +4,8 @@
   <p>$<%= @show.price%></p>
   <p><%= @show.description %></p>
 
-  <%= form_with url: cart_index_path, methd: :post do%>
-  <% hidden_field_tag(:id, @show.id)%>
-  <%=button_tag 'Add to Cart'%>
-  <%end%>
+       <%=form_with url: cart_index_path, methd: :post do%>
+          <%= hidden_field_tag(:id, @show.id)%>
+          <%=button_tag 'Add to Cart'%>
+        <%end%>
 </div>

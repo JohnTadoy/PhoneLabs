@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  ActiveAdmin.routes(self)
   devise_for :users
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  get 'product/index'
+  get 'product/show'
+  get 'categories/index'
+  get 'categories/show'
+
 
   root 'mobile_phone#index'
   get 'mobile_phone/categories/:id', to: 'categories#show'

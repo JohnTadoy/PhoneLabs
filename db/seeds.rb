@@ -2,7 +2,7 @@ require "csv"
 require "faker"
 Product.destroy_all
 Category.destroy_all
-AdminUser.destroy_all
+
 
 csv_file = Rails.root.join('db/MobilePhones.csv')
 csv_data = File.read(csv_file)
@@ -23,4 +23,3 @@ if mobile_phone_input && mobile_phone_input.valid?
 end
   puts m['name']
 end
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

@@ -30,8 +30,10 @@
         <li>
           <a class="nav-link" href="/categories">Phone Brands</a>
         </li>
+        <div class="nav-item">
         <% if user_signed_in? %>
-      <p>Logged in as: <%= current_user.email %> 🙂</p>
+          <p>Logged in as: <%= current_user.email %> 🙂</p>
+        </div>
         <li class="nav-link">
             <%= link_to "Edit Profile", edit_user_registration_path %>
             <%= link_to "Logout", destroy_user_session_path, method: :delete %>
@@ -46,14 +48,14 @@
       <form class="d-flex" role="search" action="/mobile_phone/search">
        <select class="form-control me-2" name="type" >
           <option value="">Select Phone</option>
-          <option value="170">Apple</option>
-          <option value="174">Samsung</option>
-          <option value="171">Redmi</option>
-          <option value="172">Oppo</option>
-          <option value="173">Realme</option>
-          <option value="174">Nokia</option>
-          <option value="176">Tecno</option>
-          <option value="177">Oneplus</option>
+          <option value="9">Apple</option>
+          <option value="13">Samsung</option>
+          <option value="10">Redmi</option>
+          <option value="11">Oppo</option>
+          <option value="12">Realme</option>
+          <option value="14">Nokia</option>
+          <option value="15">Tecno</option>
+          <option value="16">Oneplus</option>
         </select>
         <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search" >
         <button class="btn btn-outline-success" type="submit">Search</button>

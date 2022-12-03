@@ -22,4 +22,4 @@ if mobile_phone_input && mobile_phone_input.valid?
   puts "Invalid product #{m['name']}" unless mobile_phone_input.valid?
 end
   puts m['name']
-end
+endAdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

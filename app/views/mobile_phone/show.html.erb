@@ -1,9 +1,12 @@
 <div>
   <h1><%= @show.name %></h1>
-  <img src="<%= @show.image %>" alt="<%= @show.name %>">
+        <%if @show.img.present?%>
+          <img src="<%= @show.img%>" alt="<%= @show.name%>" class ="img-fluid border">
+          <%else%>
+          <img src="<%= @show.image%>" alt="<%= @show.name%>" class ="img-fluid border">
+        <%end%>
   <p>$<%= @show.price%></p>
   <p><%= @show.description %></p>
-
        <%=form_with url: cart_index_path, methd: :post do%>
           <%= hidden_field_tag(:id, @show.id)%>
           <%=button_tag 'Add to Cart'%>

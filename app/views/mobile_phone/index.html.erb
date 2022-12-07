@@ -1,21 +1,27 @@
 
-    <h1 class="text-center">All Mobile Phones</h1>
-    <div class="container grid">
-      <% @phone.each do |m| %>
-      <div class="g-col-3 card shadow p-3 mb-5 bg-body rounded">
-      <%if m.img.present?%>
-        <img src="<%= m.img%>" alt="<%= m.name%>" class ="img-fluid border">
-      <%else%>
-        <img src="<%= m.image%>" alt="<%= m.name%>" class ="img-fluid border">
-      <%end%>
-        <a href="<%= mobile_phone_path(m.id) %>"><%= m.name %></a>
-        <p>Price $<%= m.price%></p>
-
-        <%=form_with url: cart_index_path, methd: :post do%>
-          <%= hidden_field_tag(:id, m.id)%>
-          <%=button_tag 'Add to Cart'%>
-        <%end%>
-      </div>
+<h1 class="text-center">All Mobile Phones</h1>
+<div class="container grid">
+  <% @phone.each do |m| %>
+  <div class="g-col-3 card shadow p-3 mb-5 bg-body rounded">
+  <%if m.img.present?%>
+    <img src="<%= m.img%>" alt="<%= m.name%>" class ="img-fluid border">
+  <%else%>
+    <img src="<%= m.image%>" alt="<%= m.name%>" class ="img-fluid border">
+  <%end%>
+    <a href="<%= mobile_phone_path(m.id) %>"><%= m.name %></a>
+    <p>Price $<%= m.price%></p>
+<%if cart.include?(m)%>
+    <%= button_to cart_path(m), method: :delete do%>
+    Remove from cart
+  <%end%>
+<%else%>
+  <%= form_with url: cart_index_path, method: :post do%>
+    <%= hidden_field_tag(:id, m.id)%>
+    <%=button_tag "Add to Cart"%>
+<%end%>
+<%end%>
+    </div>
       <%end%>
     </div>
 <%= paginate @phone %>
+

@@ -11,7 +11,7 @@
   <div class="field">
     <%= f.label :province %><br />
     <div class="select">
-        <%= f.select(:province_id, Province.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, :class => '')%>
+        <%= f.select(:province_id, Province.all.collect {|p| [ p.name, p.id ] }, { include_blank: "Select Province" })%>
       </div>
   </div>
 

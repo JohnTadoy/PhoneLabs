@@ -10,7 +10,7 @@
 
    <div class="field">
     <%= f.label :province %><br />
-    <%= f.select(:province_id, Province.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, :class => '')%>
+    <%= f.select(:province_id, Province.all.collect {|p| [ p.name, p.id ] }, { include_blank: "Select Province" })%>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

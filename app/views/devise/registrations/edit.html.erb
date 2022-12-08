@@ -8,24 +8,9 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address, autofocus: true %>
-  </div>
-
    <div class="field">
     <%= f.label :province %><br />
-    <%= f.text_field :province, autofocus: true %>
-  </div>
-
-   <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city, autofocus: true %>
-  </div>
-
-   <div class="field">
-    <%= f.label :postalcode %><br />
-    <%= f.text_field :postalcode, autofocus: true %>
+    <%= f.select(:province_id, Province.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }, :class => '')%>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

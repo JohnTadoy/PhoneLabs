@@ -32,10 +32,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[7.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.string :address
       t.string :province
-      t.string :city
-      t.string :postalcode
 
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps null: false

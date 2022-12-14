@@ -39,7 +39,6 @@ provinces.each do | m |
     province_csv_file_data.save!
 end
 
-
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 

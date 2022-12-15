@@ -1,5 +1,7 @@
-<h1>Search Result</h1>
+<h1 class = "text-center">Search Result</h1>
+<div class = "container grid text-center">
   <% @mobile.each do |m|%>
+  <div class="g-col-3 card shadow p-3 mb-5 bg-body rounded text-center">
     <h2><a href="<%= mobile_phone_path(m.id) %>"><%= m.name %></a></h2>
         <%if m.img.present?%>
           <img src="<%= m.img%>" alt="<%= m.name%>" class ="img-fluid border">
@@ -8,5 +10,6 @@
         <%end%>
     <p><%= m.price%></p>
     <p><%= m.description %></p>
+    </div>
   <%end%>
 </div>

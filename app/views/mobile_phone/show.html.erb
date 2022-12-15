@@ -1,4 +1,4 @@
-<div>
+<div class = "text-center col-4 p-1 border shadow-lg p-3 mb-5 bg-body rounded">
   <h1><%= @show.name %></h1>
         <%if @show.img.present?%>
           <img src="<%= @show.img%>" alt="<%= @show.name%>" class ="img-fluid border">
@@ -11,4 +11,5 @@
           <%= hidden_field_tag(:id, @show.id)%>
           <%=button_tag 'Add to Cart'%>
         <%end%>
+</div>
 </div>

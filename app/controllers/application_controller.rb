@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :cart
 
   def initialize_session
-    session[:shopping_cart] ||=[]
+    session[:shopping_cart] ||= []
   end
 
   def cart
@@ -13,8 +13,8 @@ class ApplicationController < ActionController::Base
   before_action :set_breadcrumbs
   def add_breadcrumb(label, path = nil)
     @breadcrumbs << {
-      label: label,
-      path: path
+      label:,
+      path:
     }
   end
 
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :province_id)}
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:email, :password, :province_id) }
 
     devise_parameter_sanitizer.permit(:account_update) do |u|
       u.permit(:email, :password, :current_password, :current_address, :province_id)

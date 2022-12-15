@@ -11,7 +11,7 @@ class CartController < ApplicationController
   end
 
   def destroy
-  #remove params[:id] from cart
+    # remove params[:id] from cart
     id = params[:id].to_i
     session[:shopping_cart].delete(id)
     product = Product.find(id)
